@@ -52,15 +52,14 @@ function loadStore(id){
 let S = fresh();
 function save(){ if (!CID) return; try { localStorage.setItem("anne-" + CID + "-v1", JSON.stringify(S)); } catch (e) {} }
 
-// ---------- thema ----------
-let THEME = "";
-try { THEME = localStorage.getItem("anne-theme") || ""; } catch (e) {}
+// ---------- thema (standaard licht; donker alleen als Anne dat kiest) ----------
+let THEME = "light";
+try { THEME = localStorage.getItem("anne-theme") === "dark" ? "dark" : "light"; } catch (e) {}
 function applyTheme(){
-  const r = document.documentElement;
-  if (THEME) r.setAttribute("data-theme", THEME); else if (r.dataset.ownTheme) r.removeAttribute("data-theme");
-  const b = $("#themeBtn"); if (b) b.textContent = THEME === "dark" ? "Thema: donker" : THEME === "light" ? "Thema: licht" : "Thema: automatisch";
+  document.documentElement.setAttribute("data-theme", THEME);
+  const b = $("#themeBtn"); if (b) b.textContent = THEME === "dark" ? "Thema: donker" : "Thema: licht";
 }
-function cycleTheme(){ THEME = THEME === "" ? "light" : THEME === "light" ? "dark" : ""; document.documentElement.dataset.ownTheme = "1"; try { localStorage.setItem("anne-theme", THEME); } catch (e) {} applyTheme(); }
+function cycleTheme(){ THEME = THEME === "dark" ? "light" : "dark"; try { localStorage.setItem("anne-theme", THEME); } catch (e) {} applyTheme(); }
 
 // ---------- statistiek ----------
 const cardState = c => S.cards[c.id];
@@ -966,7 +965,6 @@ document.addEventListener("click", e => {
 });
 function init(){
   const tb = $("#themeBtn"); if (tb) tb.addEventListener("click", cycleTheme);
-  if (THEME) document.documentElement.dataset.ownTheme = "1";
   applyTheme(); route();
 }
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();

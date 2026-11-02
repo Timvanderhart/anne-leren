@@ -1,4 +1,4 @@
-/* Anne leert. Landelijk en modern: linnen beige als papier, poederroze en korenbloemblauw als accenten, een fijn ginghamruitje als enige versiering. Links een vaste kolom met navigatie (op telefoon een plakbalk bovenaan), rechts één leeskolom van max. 46rem. Elk vak krijgt een eigen accentkleur (data-accent); groen/oker/rood alleen voor goed/twijfel/fout. */
+/* Anne leert. Standaard licht (ook als het apparaat op donker staat); donker alleen via de themaknop, in warme tinten. Landelijk en modern: linnen beige als papier, poederroze en korenbloemblauw als accenten, een fijn ginghamruitje als enige versiering. Links een vaste kolom met navigatie (op telefoon een plakbalk bovenaan), rechts één leeskolom van max. 46rem. Elk vak krijgt een eigen accentkleur (data-accent); groen/oker/rood alleen voor goed/twijfel/fout. */
 :root{
   --linen:#f4ede2; --paper:#fffcf6; --sand:#ebe1d1; --line:#e2d6c4; --line-soft:#eee5d7;
   --ink:#2e2a31; --muted:#756a68; --faint:#a39791;
@@ -18,36 +18,19 @@
   --acc:var(--blue); --acc-deep:var(--blue-deep); --acc-soft:var(--blue-soft); --acc-mist:var(--blue-mist);
   color-scheme:light;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --linen:#1d1f25; --paper:#262931; --sand:#2e323b; --line:#3a3f4a; --line-soft:#30343e;
-    --ink:#efe8de; --muted:#b4aba4; --faint:#857d78;
-    --rose:#e3a1ab; --rose-deep:#f0c0c7; --rose-soft:#4a3237; --rose-mist:#33282c;
-    --blue:#9bb9e0; --blue-deep:#c3d6ef; --blue-soft:#2f3c50; --blue-mist:#283141;
-    --sage:#a3c3a1; --sage-deep:#c4dcc2; --sage-soft:#304034; --sage-mist:#29332b;
-    --ochre:#dcb56a; --ochre-deep:#ecd09a; --ochre-soft:#463a22; --ochre-mist:#332d22;
-    --lilac:#c3afe0; --lilac-deep:#dacdf0; --lilac-soft:#3b3350; --lilac-mist:#2e2a3b;
-    --good:#86c79c; --good-soft:#26392d; --warn:#e2b867; --warn-soft:#3d3221; --bad:#ec8f98; --bad-soft:#442a2e;
-    --on-acc:#1d1f25;
-    --c-s:#7fa2ef; --c-m:#6cc98f; --c-l:#f07f73; --grid:#353a44;
-    --shadow:0 1px 2px rgba(0,0,0,.25),0 4px 16px rgba(0,0,0,.2);
-    --check-a:rgba(155,185,224,.09); --check-b:rgba(155,185,224,.05);
-    color-scheme:dark;
-  }
-}
 :root[data-theme="dark"]{
-  --linen:#1d1f25; --paper:#262931; --sand:#2e323b; --line:#3a3f4a; --line-soft:#30343e;
-  --ink:#efe8de; --muted:#b4aba4; --faint:#857d78;
-  --rose:#e3a1ab; --rose-deep:#f0c0c7; --rose-soft:#4a3237; --rose-mist:#33282c;
-  --blue:#9bb9e0; --blue-deep:#c3d6ef; --blue-soft:#2f3c50; --blue-mist:#283141;
-  --sage:#a3c3a1; --sage-deep:#c4dcc2; --sage-soft:#304034; --sage-mist:#29332b;
-  --ochre:#dcb56a; --ochre-deep:#ecd09a; --ochre-soft:#463a22; --ochre-mist:#332d22;
-  --lilac:#c3afe0; --lilac-deep:#dacdf0; --lilac-soft:#3b3350; --lilac-mist:#2e2a3b;
-  --good:#86c79c; --good-soft:#26392d; --warn:#e2b867; --warn-soft:#3d3221; --bad:#ec8f98; --bad-soft:#442a2e;
-  --on-acc:#1d1f25;
-  --c-s:#7fa2ef; --c-m:#6cc98f; --c-l:#f07f73; --grid:#353a44;
-  --shadow:0 1px 2px rgba(0,0,0,.25),0 4px 16px rgba(0,0,0,.2);
-  --check-a:rgba(155,185,224,.09); --check-b:rgba(155,185,224,.05);
+  --linen:#241d1c; --paper:#2f2725; --sand:#3b322f; --line:#4b403c; --line-soft:#3a312e;
+  --ink:#f3e9dd; --muted:#c7b6aa; --faint:#93827a;
+  --rose:#e9a7b0; --rose-deep:#f4c6cc; --rose-soft:#513539; --rose-mist:#3a2a2b;
+  --blue:#a8c2e4; --blue-deep:#cbdcf2; --blue-soft:#34404f; --blue-mist:#2c2f37;
+  --sage:#aac6a6; --sage-deep:#cadfc6; --sage-soft:#36433a; --sage-mist:#2c322c;
+  --ochre:#e0bb72; --ochre-deep:#efd4a0; --ochre-soft:#4b3d24; --ochre-mist:#372e22;
+  --lilac:#c8b4e2; --lilac-deep:#ddd0f1; --lilac-soft:#40364f; --lilac-mist:#312a37;
+  --good:#8fcaa2; --good-soft:#2a3a2e; --warn:#e6bd6c; --warn-soft:#41351f; --bad:#ef969e; --bad-soft:#4a2c2f;
+  --on-acc:#241d1c;
+  --c-s:#86a8f0; --c-m:#72cc94; --c-l:#f2867a; --grid:#3d3431;
+  --shadow:0 1px 2px rgba(0,0,0,.28),0 4px 16px rgba(0,0,0,.22);
+  --check-a:rgba(233,167,176,.10); --check-b:rgba(233,167,176,.05);
   color-scheme:dark;
 }
 /* Accent per vak */
